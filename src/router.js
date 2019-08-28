@@ -1,0 +1,21 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+const routes = [
+	{
+		path: '/',
+		redirect: '/main',
+	},
+	{
+		path: '/main',
+		components: () => import('@components/main'),
+	},
+]
+
+Vue.use(VueRouter)
+const router = new VueRouter({
+	mode: 'history',
+	routes,
+})
+
+export default router
